@@ -18,9 +18,17 @@ function[RotationDate]=CalcDate(DatapathInput,DatapathOutput,PrStart, PrEnd)
     Datafile=dir(fullfile(DatapathInput,'*PrChar.txt'));
     filename=Datafile(1).name; %retrieve filename
     filenamefull=fullfile(DatapathInput, filename); % create exact reference to file (with folders)   
-    PrChar= importdata(filenamefull); 
-
-    PrName(1,:)=PrChar.textdata(1,:);        %Project names
+    PrChar= importdata(filenamefull,'\t'); 
+    
+    fid=fopen(filenamefull);
+            if fid==-1 % check if file was really opened
+                disp ('File could not be opened')
+            else    
+                %carry on, file can now be read
+            end
+    PrChartext=textscan(fid,'%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s');
+    fclose(fid);      
+               
     PrNumb(1,:)=PrChar.data(1,:);            % Project code
     np=max(PrNumb);                          % Number of projects 
     PrMode(1,1:np)=PrChar.data(2,1:np);      % Type of project (1= single run, 2= multiple linked runs/ crop rotation)  
@@ -31,6 +39,10 @@ function[RotationDate]=CalcDate(DatapathInput,DatapathOutput,PrStart, PrEnd)
     MainTbase(1,1:np)=PrChar.data(7,1:np);   % Base temp of main crop (°C)
     MainTupper(1,1:np)=PrChar.data(8,1:np);  % Upper temp of main crop (°C)
     AfterType(1,1:np)=PrChar.data(9,1:np);   % Type of after crop (1= no crop, 2= grass or cover crop)
+    for p=1:np         
+    PrName(1,p)=PrChartext{1,p}(1,1);        %Project names
+    MainCrop(1,p)=PrChartext{1,p}(2,1);       % Main crop
+    end
 
 % Length of simulation period
     PrLength=year(PrEnd)-year(PrStart)+1;

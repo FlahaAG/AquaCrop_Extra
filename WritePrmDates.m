@@ -19,14 +19,14 @@ clear
 % 0. TO ADJUST BEFORE RUNNING
 %-------------------------------------------------------------------------
 % Datapath for date calculate input (*Temp.Txt and *PrChar.txt)
-DatapathInput='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Input\Fut1';
+DatapathInput='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Input\Fut23';
 
 % Datapath fortemplate project files (with wrong dates)
 DatapathTemplate='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Input\Template';
 
 % Datapath to store the results of the date calculation (in excel) and to
 % store the new projectfiles with adapted dates
-DatapathOutput='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Output\Fut1';
+DatapathOutput='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Output\Fut23';
 
 PrStart=datetime(2035,1,1);       % Start date of project
 PrEnd=datetime(2064,12,30);       % End date of project
@@ -158,6 +158,7 @@ clear DatapathInput DatapathOutput DatapathTemplate fid filename filenamefull fi
 clear nlines nrun Pr ans
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %Info on script build up: http://nl.mathworks.com/help/matlab/import_export/writing-to-text-data-files-with-low-level-io.html#br5_kad-1    
     
     
