@@ -22,7 +22,7 @@ clear
 DatapathInput='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Input\Fut23';
 
 % Datapath fortemplate project files (with wrong dates)
-DatapathTemplate='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Input\Template';
+DatapathTemplate='C:\DATA_HanneV\~Onderzoek\DEEL 2 - Ecohydro model\DEEL IIB  -VHM-AC\Application\Model build up\Project create\Input\Template\Fut23';
 
 % Datapath to store the results of the date calculation (in excel) and to
 % store the new projectfiles with adapted dates
